@@ -1,0 +1,11 @@
+import { readFile, writeFile, rename } from 'node:fs/promises';
+import assert from 'node:assert/strict';
+const source = 'public/videos/switch-tv/img_1800.mp4';
+const bytes = await readFile(source);
+const boundary = 16 * 1024 * 1024;
+const paths = ['public/videos/switch-tv/img_1800.part1', 'public/videos/switch-tv/img_1800.part2'];
+await writeFile(paths[0], bytes.subarray(0, boundary));
+await writeFile(paths[1], bytes.subarray(boundary));
+assert.deepEqual(Buffer.concat(await Promise.all(paths.map(path => readFile(path)))), bytes);
+await rename(source, 'tmp/tv-quality-v344/published-snow-720.mp4');
+console.log('Video split without re-encoding; byte identity verified');
