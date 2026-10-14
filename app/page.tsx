@@ -56,10 +56,10 @@ const tvMobileSummaries: Record<string, string> = {
 const orderedBeers = [...beers].sort((a, b) => Number(b.id === featuredBeerId) - Number(a.id === featuredBeerId));
 
 const editorialStories = [
+  { date: '16.10.26', category: 'Тап тейковер / Премьера', title: 'Zagovor в Пивной Диете', text: 'Московская пивоварня Zagovor в гостях у «Пивной Диеты»: проверенные хиты, эксклюзивные сорта и премьера совместного пива с Switch Brewing. Встречаемся 16 октября в 19:30 на Восстания, 37–39.', href: 'https://t.me/switchbrewing/240', image: '/news/zagovor-pivnaya-dieta-october-2026.jpg', imageAlt: 'Афиша тап тейковера Zagovor и премьеры совместного пива с Switch Brewing' },
   { date: '16.09.26', category: 'Анонс / Zagovor', title: 'Варим с Zagovor', text: 'Съездили к Zagovor и сварили вместе охмелённый сорт. Пока без названия и даты выхода — подробности будут позже.', href: 'https://t.me/switchbrewing/236', image: '/news/zagovor-september-2026.jpg', imageAlt: 'Совместная варка Switch Brewing и Zagovor, сентябрь 2026' },
   { date: '07.09.26', category: 'Гостевые краны / RULE', title: 'Пять кранов в RULE', text: 'В афише RULE taproom — сразу пять наших сортов: Tiki, Lemon Hazed, Teenage Fury, «Оплачено» и Two-Step. От лёгкого APA до тройного IPA.', href: 'https://t.me/switchbrewing/235', image: '/switch-photos/bottles.jpg', imageAlt: 'Бутылки Switch Brewing — иллюстрация к новости о гостевых кранах' },
   { date: '07.09.26', category: 'Фестивали / Фотоотчёт', title: 'Лето отгремело', text: 'Закрыли фестивальный сезон и собрали фотографии. Спасибо всем, кто подходил к нашим кранам, соседям по стендам и организаторам. Увидимся на следующих фестивалях.', href: 'https://www.instagram.com/switchbrewing/p/Dc_RxSBjZoi/', image: '/news/festival-season-2026.jpg', imageAlt: 'Фестивальный отчёт Switch Brewing за 2026 год' },
-  { date: '24.08.26', category: 'Пиво / Скейт-споты', title: 'Площадь Искусств × TREPANG', text: 'Серия Single Hop IPA — про петербургские споты. Первый выпуск на Citra: 6,7%, буклет к банке и QR-код на видео TREPANG о месте, где катались поколения скейтеров.', href: 'https://t.me/switchbrewing/231', image: '/switch-photos/history-skate-beer.webp', imageAlt: 'Пиво Switch Brewing и скейтборд' },
 ];
 
 const partners = [
