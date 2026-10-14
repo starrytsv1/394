@@ -13,7 +13,7 @@ export function NewsGallery({ images, title }: { images: string[]; title: string
     const next = Math.max(0, Math.min(images.length - 1, index + step));
     el.scrollTo({ left: next * el.clientWidth, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
   }
-  return <div className={`news-gallery${images[0] === '/news/rule-taproom.jpg' ? ' news-gallery--poster' : ''}`}>
+  return <div className={`news-gallery${images[0] === '/news/rule-taproom.jpg' ? ' news-gallery--poster' : ''}${images[0] === '/news/zagovor-pivnaya-dieta-october-2026.jpg' ? ' news-gallery--event-poster' : ''}`}>
     <div className="news-gallery-media">
     <div className="news-gallery-track" ref={track} role="region" aria-label={`Фотографии: ${title}`} tabIndex={0}
       onKeyDown={event => { if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') { event.preventDefault(); move(event.key === 'ArrowRight' ? 1 : -1); } }}

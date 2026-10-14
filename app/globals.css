@@ -5935,6 +5935,8 @@ footer small {
 .latest-feed .news-gallery-slide img[src="/news/zagovor-september-2026.jpg"] { object-fit: cover; }
 .latest-feed .news-gallery--poster .news-gallery-slide img { object-fit: contain; padding: 6px; box-sizing: border-box; background: #fff; }
 .news-gallery--poster .news-gallery-track { background: #fff; }
+.news-gallery--event-poster .news-gallery-track { aspect-ratio: 639 / 800; }
+.latest-feed .news-gallery--event-poster .news-gallery-slide img { aspect-ratio: auto; object-fit: contain; }
 .photo-carousel .brew-page-controls {
   width: fit-content; margin-left: auto; gap: 12px; padding: 4px;
   border: 1px solid #ffffff36; border-radius: 999px; background: #191a19;
