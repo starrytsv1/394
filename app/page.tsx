@@ -8,15 +8,16 @@ import { MorphButton, MorphLink } from './morph-ui';
 import { keepRussianShortWords } from './typography';
 
 const beers = [
+  { id: 'handrails', name: 'Handrails', style: 'New England Double IPA', description: 'Совместная варка с Zagovor Brewery. Плотный New England Double IPA крепостью 8,5%, начальной плотностью 19° Plato и горечью 40 IBU.', abv: '8,5%', hops: '19° Plato · 40 IBU', format: '0,45 л', image: '/optimized/handrails-front-matte-v2.png', imageAlt: 'Банка Handrails — коллаборация Zagovor Brewery и Switch Brewing' },
+  { id: 'two-step', name: 'Two-Step', style: 'Triple IPA', description: 'Совместная варка с SALIWA. Triple IPA крепостью 9,5%, горечь 90 IBU. Хмель: Lotus, Riwaka, Strata и Simcoe.', abv: '9,5%', hops: 'Lotus · Riwaka · Strata · Simcoe', format: '', status: '', image: '/optimized/two-step-front.png', imageAlt: 'Банка Two-Step — коллаборация Switch Brewing и SALIWA' },
   { id: 'art', name: 'Площадь Искусств', style: 'Single Hop IPA', description: 'Single Hop IPA. Крепость 6,7%; хмель Citra.', abv: '6.7%', hops: 'Citra', format: '0,5 л', image: '/optimized/ploshchad-can.webp', imageAlt: 'Банка пива Площадь Искусств' },
   { id: 'fury', name: 'Teenage Fury', style: 'Micro IPA', description: 'Micro IPA совместно с Velka Morava. Крепость 3,7%; хмель Magnum, Mosaic и Nectaron.', abv: '3.7%', hops: 'Magnum · Mosaic · Nectaron', format: '0,5 л', price: 260, status: '', image: '/optimized/fury-can.webp', imageAlt: 'Банка пива Teenage Fury' },
   { id: 'code', name: 'CODENAME #LBD026', style: 'Session IPA', description: 'Сессионный IPA, сваренный для Lobotomy Day 2026: невысокая крепость, Mosaic и HBC 522.', abv: '3.6%', hops: 'Mosaic · HBC 522', format: '0,5 л', price: 260, status: '', image: '/optimized/codename-can.webp', imageAlt: 'Банка пива CODENAME LBD026' },
   { id: 'paid', name: 'Оплачено', style: 'Double IPA', description: 'Double IPA. Совместная варка с White Stone.', abv: '—', hops: 'White Stone × Switch', format: '0,5 л', image: '/optimized/oplacheno-front.png', imageAlt: 'Лицевая сторона банки Double IPA Оплачено со скейтбордистом' },
-  { id: 'two-step', name: 'Two-Step', style: 'Triple IPA', description: 'Совместная варка с SALIWA. Triple IPA крепостью 9,5%, горечь 90 IBU. Хмель: Lotus, Riwaka, Strata и Simcoe.', abv: '9,5%', hops: 'Lotus · Riwaka · Strata · Simcoe', format: '', status: '', image: '/optimized/two-step-front.png', imageAlt: 'Банка Two-Step — коллаборация Switch Brewing и SALIWA' },
   { id: 'tiki', name: 'Tiki', style: 'American Pale Ale', description: 'APA, сваренный к двухлетию ярославского бара Magnum. В рецепте Mosaic и Strata, крепость 5,5% и горечь 45 IBU. На этикетке — сёрфинг, волна и немного лета.', abv: '5,5%', hops: 'Mosaic · Strata', format: '0,45 л', status: '', image: '/optimized/tiki-front.png', imageAlt: 'Бирюзовая банка Tiki — Switch Brewing × Magnum' },
   { id: 'lemon-hazed', name: 'Lemon Hazed', style: 'Hazy Pale Ale', description: 'Совместная варка с Selfmade. Мутный пэйл-эль на Galaxy и Mosaic Cryo: тропики, цитрусы и ботанические терпены Super Lemon Haze. На банке — граффити, в рецепте — 5,5% крепости.', abv: '5,5%', hops: 'Galaxy · Mosaic Cryo', format: '', status: '', image: '/optimized/lemon-hazed-front.png', imageAlt: 'Жёлтая банка Lemon Hazed — Selfmade × Switch Brewing' },
 ];
-const featuredBeerId = 'two-step';
+const featuredBeerId = 'handrails';
 const tvSummaries: Record<string, string> = {
   'moscow-239': 'Немного хайлайтов о поездке в Москву, к старшим',
   '1628': 'West Coast IPA с Columbus, Centennial, Simcoe, Citra и Mosaic. Пиво и скейтбординг в первом эфире Switch TV.',
@@ -56,7 +57,7 @@ const tvMobileSummaries: Record<string, string> = {
 const orderedBeers = [...beers].sort((a, b) => Number(b.id === featuredBeerId) - Number(a.id === featuredBeerId));
 
 const editorialStories = [
-  { date: '16.10.26', category: 'Тап тейковер / Премьера', title: 'Zagovor в Пивной Диете', text: 'Московская пивоварня Zagovor в гостях у «Пивной Диеты»: проверенные хиты, эксклюзивные сорта и премьера совместного пива с Switch Brewing. Встречаемся 16 октября в 19:30 на Восстания, 37–39.', href: 'https://t.me/switchbrewing/240', image: '/news/zagovor-pivnaya-dieta-october-2026.jpg', imageAlt: 'Афиша тап тейковера Zagovor и премьеры совместного пива с Switch Brewing' },
+  { date: '16.10.26', category: 'Тап тейковер', title: 'Zagovor в Пивной Диете', text: 'Zagovor в «Пивной Диете»: хиты и премьера совместного пива со Switch. 16 октября, 19:30, Восстания, 37–39.', href: 'https://t.me/switchbrewing/240', image: '/news/zagovor-pivnaya-dieta-october-2026.jpg', imageAlt: 'Афиша тап тейковера Zagovor и премьеры совместного пива с Switch Brewing' },
   { date: '16.09.26', category: 'Анонс / Zagovor', title: 'Варим с Zagovor', text: 'Съездили к Zagovor и сварили вместе охмелённый сорт. Пока без названия и даты выхода — подробности будут позже.', href: 'https://t.me/switchbrewing/236', image: '/news/zagovor-september-2026.jpg', imageAlt: 'Совместная варка Switch Brewing и Zagovor, сентябрь 2026' },
   { date: '07.09.26', category: 'Гостевые краны / RULE', title: 'Пять кранов в RULE', text: 'В афише RULE taproom — сразу пять наших сортов: Tiki, Lemon Hazed, Teenage Fury, «Оплачено» и Two-Step. От лёгкого APA до тройного IPA.', href: 'https://t.me/switchbrewing/235', image: '/switch-photos/bottles.jpg', imageAlt: 'Бутылки Switch Brewing — иллюстрация к новости о гостевых кранах' },
   { date: '07.09.26', category: 'Фестивали / Фотоотчёт', title: 'Лето отгремело', text: 'Закрыли фестивальный сезон и собрали фотографии. Спасибо всем, кто подходил к нашим кранам, соседям по стендам и организаторам. Увидимся на следующих фестивалях.', href: 'https://www.instagram.com/switchbrewing/p/Dc_RxSBjZoi/', image: '/news/festival-season-2026.jpg', imageAlt: 'Фестивальный отчёт Switch Brewing за 2026 год' },
@@ -474,7 +475,7 @@ export default function Home() {
         <div className="beer-card-body">
           <div className="beer-name"><h3>{beer.name}</h3><span>{beer.style}</span></div>
           <div className="beer-details"><p className="beer-description">{beer.description}</p>
-          <dl className="beer-meta"><div><dt>Крепость</dt><dd>{beer.abv === '—' ? 'Не указана' : beer.abv}</dd></div><div><dt>{beer.id === 'paid' ? 'Коллаборация' : 'Хмель'}</dt><dd>{beer.hops}</dd></div>{beer.format && <div><dt>Объём</dt><dd>{beer.format}</dd></div>}</dl>
+          <dl className="beer-meta"><div><dt>Крепость</dt><dd>{beer.abv === '—' ? 'Не указана' : beer.abv}</dd></div><div><dt>{beer.id === 'paid' ? 'Коллаборация' : beer.id === 'handrails' ? 'Плотность / IBU' : 'Хмель'}</dt><dd>{beer.hops}</dd></div>{beer.format && <div><dt>Объём</dt><dd>{beer.format}</dd></div>}</dl>
           </div>
         </div>
       </article>})}</div>)}</div></div>
@@ -485,7 +486,7 @@ export default function Home() {
         <dl className="beer-spotlight-specs">
           <div><dt>Стиль</dt><dd>{previewBeer.style}</dd></div>
           <div><dt>Крепость</dt><dd>{previewBeer.abv === '—' ? 'Не указана' : previewBeer.abv}</dd></div>
-          <div><dt>{previewBeer.id === 'paid' ? 'Коллаборация' : 'Хмель'}</dt><dd>{previewBeer.hops}</dd></div>
+          <div><dt>{previewBeer.id === 'paid' ? 'Коллаборация' : previewBeer.id === 'handrails' ? 'Плотность / IBU' : 'Хмель'}</dt><dd>{previewBeer.hops}</dd></div>
           {previewBeer.format && <div><dt>Объём</dt><dd>{previewBeer.format}</dd></div>}
         </dl></div>
       </aside>}
@@ -592,7 +593,7 @@ export default function Home() {
       </div>
       <div className="latest-feed" data-scroll-reveal="bottom">
         {editorialStories.map(item => <article key={item.title}>
-          <NewsGallery title={item.title} images={item.title === 'Лето отгремело' ? Array.from({ length: 20 }, (_, i) => `/news/festival-${i + 1}.jpg`) : item.title === 'Площадь Искусств × TREPANG' ? Array.from({ length: 4 }, (_, i) => `/news/trepang-${i + 1}.jpg`) : item.title === 'Пять кранов в RULE' ? ['/news/rule-taproom.jpg'] : [item.image]}/>
+          <NewsGallery title={item.title} images={item.title === 'Лето отгремело' ? [4, 2, 3, 1, ...Array.from({ length: 16 }, (_, i) => i + 5)].map(i => `/news/festival-${i}.jpg`) : item.title === 'Площадь Искусств × TREPANG' ? Array.from({ length: 4 }, (_, i) => `/news/trepang-${i + 1}.jpg`) : item.title === 'Пять кранов в RULE' ? ['/news/rule-taproom.jpg'] : [item.image]}/>
           <div className="latest-feed-meta"><time>{item.date}</time><span>{item.category}</span></div>
           <p>{item.text}</p>
         </article>)}

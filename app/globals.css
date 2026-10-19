@@ -2112,7 +2112,6 @@ footer small { grid-column: 1 / -1; padding-top: 15px; border-top: 1px solid var
 .age-gate-copy small { display: block; max-width: 650px; margin-top: 20px; color: #bbb; font-size: 11px; line-height: 1.5; }
 .age-gate-actions { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .age-gate-actions button,
-.cookie-actions button,
 .legal-links button {
   min-height: 54px;
   padding: 15px 20px;
@@ -2126,31 +2125,7 @@ footer small { grid-column: 1 / -1; padding-top: 15px; border-top: 1px solid var
 }
 .age-gate-actions button:first-child { background: #f0f0eb; color: #101010; }
 .age-gate-actions button:hover,
-.cookie-actions button:hover,
 .legal-links button:hover { transform: translateY(-2px); }
-
-.cookie-banner {
-  position: fixed;
-  z-index: 40;
-  right: 18px;
-  bottom: 48px;
-  left: max(var(--rail-clearance), 18px);
-  padding: 18px 20px;
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 24px;
-  align-items: center;
-  border: 1px solid var(--ink);
-  border-radius: 0;
-  background: #272929f2;
-  box-shadow: none;
-  backdrop-filter: blur(10px);
-}
-.cookie-banner b { font: 850 12px/1 var(--font-geist-mono), monospace; text-transform: uppercase; }
-.cookie-banner p { margin: 7px 0 0; font-size: 12px; line-height: 1.45; }
-.cookie-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px; }
-.cookie-actions button { min-height: 42px; padding: 11px 14px; font-size: 7px; }
-.cookie-actions button:first-child { background: var(--ink); color: var(--inverse-ink); }
 
 .responsible-bar {
   position: static;
@@ -2932,9 +2907,6 @@ figure figcaption,
   .age-gate-copy small { margin-top: 12px; font-size: 9px; }
   .age-gate-actions { grid-column: 1; grid-template-columns: 1fr; }
   .age-gate-actions button { min-height: 48px; }
-  .cookie-banner { right: calc(10px + var(--safe-right)); bottom: calc(44px + var(--safe-bottom)); left: calc(10px + var(--safe-left)); padding: 16px; grid-template-columns: 1fr; gap: 14px; box-shadow: none; }
-  .cookie-actions { justify-content: stretch; }
-  .cookie-actions button { flex: 1 1 44%; }
   .responsible-bar { min-height: calc(38px + var(--safe-bottom)); padding: 7px calc(10px + var(--safe-right)) calc(7px + var(--safe-bottom)) calc(var(--rail-clearance) + 20px + var(--safe-left)); justify-content: flex-start; gap: 8px; font-size: 7px; }
   .legal-summary { padding: 72px calc(16px + var(--safe-right)) 32px calc(var(--rail-clearance) + 20px + var(--safe-left)); grid-template-columns: minmax(0, 1fr); gap: 42px; }
   .legal-summary::before { left: 16vw; bottom: -12px; font-size: 30vw; }
@@ -5936,8 +5908,7 @@ footer small {
 .latest-feed .news-gallery-slide img[src="/news/zagovor-september-2026.jpg"] { object-fit: cover; }
 .latest-feed .news-gallery--poster .news-gallery-slide img { object-fit: contain; padding: 6px; box-sizing: border-box; background: #fff; }
 .news-gallery--poster .news-gallery-track { background: #fff; }
-.news-gallery--event-poster .news-gallery-track { aspect-ratio: 639 / 800; }
-.latest-feed .news-gallery--event-poster .news-gallery-slide img { aspect-ratio: auto; object-fit: contain; }
+.latest-feed .news-gallery--event-poster .news-gallery-slide img { aspect-ratio: auto; object-fit: cover; }
 .photo-carousel .brew-page-controls {
   width: fit-content; margin-left: auto; gap: 12px; padding: 4px;
   border: 1px solid #ffffff36; border-radius: 999px; background: #191a19;
@@ -6221,7 +6192,7 @@ footer small {
   background: #edbd55; transform: none; box-shadow: none;
 }
 .partner-arrow:hover, .age-gate-actions button:hover,
-.cookie-actions button:hover, .legal-links button:hover { transform: none; }
+.legal-links button:hover { transform: none; }
 .news-gallery-controls button:hover svg { transform: none; }
 .beer-mobile-navigation { display: flex; justify-content: space-between; gap: 12px; margin-top: 12px; }
 .beer-mobile-navigation button { display: grid; place-items: center; width: 44px; height: 44px; border: 1px solid #e4b64f80; border-radius: 50%; background: #171918; color: #e4b64f; }
@@ -6366,6 +6337,7 @@ footer small {
 .beer-card--art,
 .beer-card--fury,
 .beer-card--code { --rail-can-scale: 1.057; --spotlight-can-scale: 1.036; }
+.beer-card--handrails { --rail-can-scale: .94; --spotlight-can-scale: .94; }
 .beer-card--paid { --rail-can-scale: 1; --spotlight-can-scale: .978; }
 .beer-card--two-step { --rail-can-scale: .965; --spotlight-can-scale: .946; }
 .beer-card--tiki { --rail-can-scale: 1.064; --spotlight-can-scale: 1.122; }
